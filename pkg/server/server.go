@@ -35,9 +35,9 @@ func Run(config Config) {
 
 	router.GET("/health", handlers.HealthCheck)
 
-	router.GET("/sparkui/*path",
+	router.GET("/proxy/*path",
 		func(context *gin.Context) {
-			handlers.ServeSparkUI(context, &apiConfig, "/sparkui")
+			handlers.ServeSparkUI(context, &apiConfig, "/proxy")
 		})
 
 	router.Run(fmt.Sprintf(":%d", port))

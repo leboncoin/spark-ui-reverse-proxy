@@ -26,7 +26,7 @@ import (
 var (
 	namespace         = flag.String("namespace", "", "The Kubernetes namespace where Spark applications are running.")
 	port              = flag.Int("port", 8080, "Server port for this reverse proxy.")
-	sparkUIServiceUrl = flag.String("spark-ui-service-url", "http://{{$appName}}-ui-svc.{{$appNamespace}}.svc.cluster.local:4040", "Spark UI Service URL, this should point to the Spark driver service which provides Spark UI inside that driver.")
+	sparkUIServiceUrl = flag.String("spark-ui-service-url", "http://{{$appName}}.{{$appNamespace}}.svc.cluster.local:4040", "Spark UI Service URL, this should point to the Spark driver service which provides Spark UI inside that driver.")
 	modifyRedirectUrl = flag.Bool("modify-redirect-url", false, "Whether to modify redirect url in the HTTP response returned from the Spark UI.")
 )
 
